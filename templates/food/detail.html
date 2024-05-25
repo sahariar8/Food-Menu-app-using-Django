@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Detail</title>
-</head>
-<body>
-    
-        image:{{item.item_image}} <br>
-        item Description:{{ item.item_desc }} <br>
-        item price:{{ item.item_price }}
+{% extends 'food/base.html' %}
 
-   
-</body>
-</html>
+
+{% block content %}
+    
+        <div class="col-md-9 mx-auto mt-4">
+            <div class="d-flex justify-content-center mt-3">
+                <div class="card" style="width: 40rem;">
+                    <img style="height: 280px;" src="{{ item.item_image.url}}" class="img-fluid" alt="...">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h5 class="card-title">{{item.item_name}}</h5>
+                        <h5 class="card-title">Price: {{item.item_price}} Tk</h5>
+                      </div>
+                      <p>{{item.item_desc}}</p>
+                      <a href="" class="btn btn-primary">Delete</a>
+                    </div>
+                  </div>
+                 
+            </div>
+        </div>
+  
+{% endblock %}
