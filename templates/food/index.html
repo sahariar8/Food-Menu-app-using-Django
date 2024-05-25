@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menue</title>
+</head>
+<body>
+    {% for item in items %}
+       <ul>
+            <li><a  style="text-decoration: none;" href="{% url 'food:detail' item.id %}" >Name:{{ item.item_name }}</a> </li>
+            <li>image:{{item.item_image}} </li>
+       </ul>
+    {% endfor %}
+</body>
+</html>
